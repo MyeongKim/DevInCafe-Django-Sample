@@ -1,14 +1,6 @@
-{% load staticfiles %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>love</title>
-    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
-</head>
-<body>
-    <h1 class="test-red" onclick="alertTest()">django template test</h1>
-    <script src="{% static 'js/script.js' %}"></script>
-</body>
-</html>
+{% block content %}
+    {{ block.super }}
+    <p>love you bj love love me</p>
+{% endblock %}
