@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% load staticfiles %}
+{% block stylesheet %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12">
+            {{ post.title }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}{% endblock %}

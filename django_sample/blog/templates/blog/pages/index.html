@@ -23,13 +23,13 @@
                 <tbody>
                 {% if e_post_list %}
                     {% for index, post in e_post_list %}
-                        <tr>
-{#                        <a href="{% url "" %}">#}
+                        <tr onclick="javascript:window.location.href='{% url 'blog:post_detail' post.id %}'" style="cursor: pointer">
+                        <a href="{% url "blog:post_detail" post.id %}">
                             <th scope="row">{{ index | add:1}}</th>
                             <td>{{ post.title }}</td>
                             <td>{{ post.author.username }}</td>
                             <td>{{ post.create_dt }}</td>
-{#                            </a>#}
+                            </a>
                         </tr>
                     {% endfor %}
                     {% else %}

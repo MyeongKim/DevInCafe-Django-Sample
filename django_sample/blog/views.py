@@ -1,3 +1,4 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
 
 from blog.forms import PostForm
@@ -34,3 +35,23 @@ def post_create(request):
     context.update({'form': form})
 
     return render(request, 'blog/pages/add_post.html', context)
+
+
+def post_detail(request, post_id):
+
+    if not post_id :
+        return redirect('blog:index')
+
+    title = 'DevInCafe | NEW'
+
+
+    try:
+        post = Post.objects.get(id=post_id)
+    except ObjectDoesNotExist:
+        return redirect('blog:index')
+
+    context = {
+        'WEB_TITLE': title,
+        'post':post
+    }
+    return render(request, 'blog/pages/detail_post.html', context)
