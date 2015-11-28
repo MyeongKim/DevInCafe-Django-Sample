@@ -6,7 +6,7 @@
 {% block content %}
     <div class="row">
     <div class="col-sm-12">
-        <button type="button" class="btn btn-primary">ADD</button>
+        <a href="{% url "blog:post_create" %}"><button type="button" class="btn btn-primary">ADD</button></a>
         <button type="button" class="btn btn-success">UPDATE</button>
         <button type="button" class="btn btn-danger">DELETE</button>
     </div>
@@ -21,13 +21,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% if post_list %}
-                    {% for post in post_list %}
+                {% if e_post_list %}
+                    {% for index, post in e_post_list %}
                         <tr>
-                            <th scope="row">1</th>
+{#                        <a href="{% url "" %}">#}
+                            <th scope="row">{{ index | add:1}}</th>
                             <td>{{ post.title }}</td>
                             <td>{{ post.author.username }}</td>
                             <td>{{ post.create_dt }}</td>
+{#                            </a>#}
                         </tr>
                     {% endfor %}
                     {% else %}

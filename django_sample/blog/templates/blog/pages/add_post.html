@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% load staticfiles %}
+{% block stylesheet %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+    <div class="col-sm-12">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}
+
+{% block script %}{% endblock %}
