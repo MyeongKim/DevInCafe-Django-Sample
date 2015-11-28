@@ -1,11 +1,9 @@
 from django.shortcuts import render
 
 
-# Create your views here.
 def index(request):
-    context = {}
-    template = 'index.html'
-
-    # code
-
-    return render(request, template, context)
+    title = 'DevInCafe Sample | Blog'
+    context = {
+        'WEB_TITLE' : title
+    }
+    return render(request, 'blog/pages/index.html', context)
