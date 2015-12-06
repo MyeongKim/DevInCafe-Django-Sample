@@ -1,5 +1,8 @@
 {% extends 'accounts/base.html' %}
 
+{% load socialaccount %}
+
+
 {% block stylesheet %}{% endblock %}
 
 {% block content %}
@@ -10,6 +13,7 @@
         </table>
         <input type="submit">
     </form>
+    <a href="{% provider_login_url "facebook" method="oauth2" %}">Facebook OAuth2</a>
 {% endblock %}
 
 {% block script %}{% endblock %}
